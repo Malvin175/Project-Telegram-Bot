@@ -1,0 +1,115 @@
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes, filters, MessageHandler
+
+key_token = "6663502787:AAF2SFymc8ILnDV2KvvERqHADbMD_EfUkR4" #KEY-TOKEN BOT 
+user_bot = "@Siswa1_IGS_bot" #@user bot
+
+async def  start_command(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(f"Halo disana ! Salam kenal saya adalah bot yang bernama {user_bot} yang berfungsi memberikan wawasan kepada siapa saja yang ingin mengetahui ibukota dari daerah atau provinsi tersebut, tidak percaya ? coba saja gunakan /help untuk melihat apa saja yang dapat saya lakukan")
+    
+async def  help_command(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("Kirim sebuah nama provinsi , apa saja maka saya akan dapat memberi tahu anda mengenai ibukota dari provinsi tersebut")
+
+async def  text_massage(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    text_diterima : str = update.message.text
+    print(f"Pesan diterima : {text_diterima}")
+    text_lwr_diterima = text_diterima.lower()
+    if 'aceh' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Nanggroe Aceh Darusallam dan ibukota dari daerah tersebut adalah Banda Aceh")
+    elif 'sumatera utara' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Sumatera Utara dan ibukota dari daerah tersebut adalah Medan")
+    elif 'sumatera selatan' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Sumatera Selatan dan ibukota dari daerah tersebut adalah Palembang")    
+    elif 'sumatera barat' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Sumatera Barat dan ibukota dari daerah tersebut adalah Padang")    
+    elif 'bengkulu' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Bengkulu dan ibukota dari daerah tersebut adalah Bengkulu")
+    elif 'riau' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Riau dan ibukota dari daerah tersebut adalah Pekanbaru")
+    elif 'kepulauan riau' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Kepulauan Riau dan ibukota dari daerah tersebut adalah Tanjung Pinang")
+    elif 'jambi' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Jambi dan ibukota dari daerah tersebut adalah Jambi")
+    elif 'lampung' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Lampung dan ibukota dari daerah tersebut adalah Lampung")
+    elif 'bangka belitung' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Bangka Belitung dan ibukota dari daerah tersebut adalah Pangkal Pinang")
+    elif 'kalimantan barat' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Kalimantan Barat dan ibukota dari daerah tersebut adalah Pontianak")
+    elif 'kalimantan timur' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Kalimantan Timur dan ibukota dari daerah tersebut adalah Samarinda")
+    elif 'kalimantan selatan' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Kalimantan Selatan dan ibukota dari daerah tersebut adalah Banjarbaru")
+    elif 'kalimantan tengah' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Kalimantan dan ibukota dari daerah tersebut adalah Banda Palangkaraya")
+    elif 'kalimantan utara' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Kalimantan Utara dan ibukota dari daerah tersebut adalah Tanjung Selor")
+    elif 'banten' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Banten dan ibukota dari daerah tersebut adalah Serang")
+    elif 'jakarta' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu DKI Jakarta dan ibukota dari daerah tersebut adalah Jakarta")
+    elif 'jawa barat' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Jawa dan ibukota dari daerah tersebut adalah Bandung")
+    elif 'jawa tengah' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Jawa Tengah dan ibukota dari daerah tersebut adalah Semarang")
+    elif 'yogyakarta' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Yogyakarta dan ibukota dari daerah tersebut adalah Yogyakarta")
+    elif 'jawa timur' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Jawa Timur dan ibukota dari daerah tersebut adalah Surabaya")
+    elif 'bali' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Bali dan ibukota dari daerah tersebut adalah Denpasar")
+    elif 'nusa tenggara timur' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Nusa Tenggara Timur dan ibukota dari daerah tersebut adalah Kupang")
+    elif 'nusa tenggara barat' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Nusa Tenggara Barat dan ibukota dari daerah tersebut adalah Mataram")
+    elif 'gorontalo' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Gorontalo dan ibukota dari daerah tersebut adalah Gorontalo")
+    elif 'sulawesi barat' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Sulawesi Barat dan ibukota dari daerah tersebut adalah Mamuju")
+    elif 'sulawesi tengah' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Sulawesi Tengah dan ibukota dari daerah tersebut adalah Palu")
+    elif 'sulawesi utara' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Sulawesi Utara dan ibukota dari daerah tersebut adalah Manado")
+    elif 'sulawesi tenggara' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Sulawesi Tenggara dan ibukota dari daerah tersebut adalah Kendari")
+    elif 'sulawesi selatan' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Sulawesi Selatan dan ibukota dari daerah tersebut adalah Makassar")
+    elif 'maluku utara' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Maluku Utara dan ibukota dari daerah tersebut adalah Sofifi")
+    elif 'maluku' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Maluku dan ibukota dari daerah tersebut adalah Ambon")
+    elif 'papua barat' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Papua Barat dan ibukota dari daerah tersebut adalah Manokwari")
+    elif 'papua' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Papua dan ibukota dari daerah tersebut adalah Jayapura")
+    elif 'papua tengah' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Papua Tengah dan ibukota dari daerah tersebut adalah Nabire")
+    elif 'papua pegunungan' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Papua Pegunungan dan ibukota dari daerah tersebut adalah Jayawijaya")
+    elif 'papua selatan' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Papua Selatan dan ibukota dari daerah tersebut adalah Merauke")
+    elif 'papua barat daya' in text_lwr_diterima:
+        await update.message.reply_text(f"Baik, daerahnya sudah terkonfirmasi yaitu Papua Barat Daya dan ibukota dari daerah tersebut adalah Sorong")
+    else:
+        await update.message.reply_text("Maaf, bot tidak dapat menemukan provinsi tersebut atau provinsi yang dikirimkan bukanlah sebuah provinsi sehingga tidak ada yang merupakan ibukota dari daerah yang dikirimkan")
+
+async def photo_message(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    return await update.message.reply_text("Maaf, bot tidak dapat mengerti gambar yang diberikan")
+        
+async def  error(update: Update, context:ContextTypes.DEFAULT_TYPE):
+    print(f"Terdeteksi sebuah error : {context.error}")
+
+
+if __name__ == '__main__':
+    print("Mulai")
+    app = Application.builder().token(key_token).build()
+    #COMMAND :
+    app.add_handler(CommandHandler('start', start_command))
+    app.add_handler(CommandHandler('help', help_command))
+    #MESSAGE:
+    app.add_handler(MessageHandler(filters.TEXT, text_massage))
+    app.add_handler(MessageHandler(filters.PHOTO, photo_message))
+    #ERROR :
+    app.add_error_handler(error)
+    #POLLING :
+    app.run_polling(poll_interval=1)
